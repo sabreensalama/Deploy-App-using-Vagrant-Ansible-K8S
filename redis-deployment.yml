@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: redis
+
+spec: 
+  selector:
+    matchLabels:
+      service:  hello-python-redis-svc
+  template: 
+    metadata:
+      labels: 
+        service:  hello-python-redis-svc
+    spec:
+      
+      containers:
+      - name: redis 
+        image: redis:alpine
