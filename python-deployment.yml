@@ -1,0 +1,33 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata:
+  name: hello-python-redis
+
+spec:
+  selector:
+    matchLabels:
+      service:  hello-python-redis-svc
+  template:
+    metadata:
+      labels:
+        service:  hello-python-redis-svc
+    spec: 
+      containers:
+        - name: hello-python-redis
+          image: sabreensalama/hello-python-redis
+          ports:
+            - containerPort: 4222
+          env: 
+          - name: REDIS_HOST 
+            value: "redis"
+          - name: REDIS_PORT 
+            value: "6379"
+          - name: REDIS_DB 
+            value: "0"
+          - name: ENVIRONMENT 
+            value: "dev"
+          - name: HOST
+            value: "localhost"
+          - name: PORT
+            value: "4222"
+
