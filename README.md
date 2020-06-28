@@ -1,5 +1,7 @@
 # Deploy-App-using-Vagrant-Ansible-K8S
-#Steps
+deploy an application using k8s ,vagrant  and ansible to create one master and one node
+
+# Steps
 ```
 vagrant up
 ```
